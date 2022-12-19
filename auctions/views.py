@@ -190,7 +190,9 @@ def listing_page(req, title):
                 context['error1'] = 'Bid not valid'
         # 添加评论
         if req.POST.get('comment') is not None:
-            Comment(item_id=item_id, user=req.user.username, com=req.POST.get('comment')).save()
+            comment = Comment(item_id=item_id, user=req.user.username, com=req.POST.get('comment'))
+            comment.save()
+            context['coms'].append({'user': comment.user, 'com': comment.com, 'create_date': comment.create_date})
 
     return render(req, 'auctions/listing_page.html', context)
 
