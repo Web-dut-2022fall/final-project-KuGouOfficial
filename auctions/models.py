@@ -26,8 +26,6 @@ class Item(models.Model):
     create_date = models.DateTimeField('保存日期', default=timezone.now)
     mod_date = models.DateTimeField('最后修改日期', auto_now=True)
 
-    def __str__(self):
-        return f"{self.name} {self.time}"
 
 
 class WatchList(models.Model):
