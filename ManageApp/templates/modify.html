@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+<span style="color:red;font-size30px">{{error}}</span>
+<div class="view-table">
+
+
+    <table>
+
+        <tr>
+            <th>
+                KEY
+            </th>
+            <th>
+                VALUE
+            </th>
+        </tr>
+
+        {% for key,value in items.items %}
+        <form action="/modify" method="post">
+            {% csrf_token %}
+            <tr>
+                <th>
+                    <input type="text" value={{key}} name="key" style="border-radius:15px;height:30px;
+                    font-weight:bold;font-size:20px;">
+                </th>
+                <th>
+                    <input type="text" value={{value}} name="value" style="border-radius:15px;
+                    height:30px;font-weight:bold;font-size:20px;">
+                </th>
+                <th>
+                    <input type="hidden" name="pre-key" value={{key}}>
+                    <input type="submit" value="Modify" style="font-size:20px;">
+                </th>
+            </tr>
+        </form>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}

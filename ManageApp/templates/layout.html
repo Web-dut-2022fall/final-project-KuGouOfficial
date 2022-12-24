@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css">
+        @import '{% static 'style.css' %}'
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<a href="/"><h1 class="title" >数 据 库</h1></a>
+<table class="sel-card">
+        <tr>
+            <th>
+                <a href="/create"><span class="sel-card" >增</span></a>
+            </th>
+            <th>
+                <a href="/delete"><span class="sel-card">删</span></a>
+            </th>
+            <th>
+                <a href="/modify"><span class="sel-card">改</span></a>
+            </th>
+            <th>
+                <a href="/search"><span class="sel-card">查</span></a>
+            </th>
+        </tr>
+    </table>
+<div class="layer-box">
+
+    {% block body %}
+    {% endblock %}
+
+</div>
+</body>
+</html>

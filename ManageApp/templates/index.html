@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="view-table">
+    <table >
+        <tr>
+            <th>
+                KEY
+            </th>
+            <th>
+                VALUE
+            </th>
+        </tr>
+        {% for key,value in items.items %}
+        <tr>
+            <th>
+                {{key}}
+            </th>
+            <th>
+                {{value}}
+
+            </th>
+            <th>
+                {%if delete == 'true' %}
+                    <form action="/delete" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="key" value={{key}}>
+                        <input type="submit" value="Delete" style="font-size:20px;">
+                    </form>
+                {% endif %}
+
+                {%if delete == 'true' %}
+
+                {% endif %}
+            </th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
