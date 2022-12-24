@@ -1,1 +1,12 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9644718&assignment_repo_type=AssignmentRepo)
+# 数据库
+
+## 增
+> 增加一组键值对
+
+> key重复的话输出提醒
+## 删
+> 删除一组键值对
+## 改
+> 在输入框里修改，点击对应的按钮完成修改，并展示在最后一行
+## 查 
+> 展示所有数据
