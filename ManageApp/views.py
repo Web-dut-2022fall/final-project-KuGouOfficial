@@ -59,7 +59,7 @@ def modify(req):
         key = req.POST.get('key').strip()
         val = req.POST.get('value').strip()
         try:
-            item = DB.objects.get(key=key)
+            item = DB.objects.get(key=req.POST.get('pre-key'))
             item.delete()
             DB(key=key, value=val).save()
         except models.DB.DoesNotExist:
